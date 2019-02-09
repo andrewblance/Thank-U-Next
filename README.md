@@ -1,9 +1,11 @@
-# Thank-U-Next
+# Thank U, Next (a side scrolling shooter game)
 
 ## Introduction
-This repo contains the begins of code to make a side scrolling shooter/ platformer game. At the current moment it will not compile on a machine unless you can supply libraries for SDL2, SDL2_mixer and SDL2_image. On top of this the music and graphics of the game are also not included. The makefile included is pretty specific for my machine, so good luck.
+This repo contains the begins of code to make a side scrolling shooter/ platformer game. At the current moment it will not compile on a machine unless you can supply libraries for SDL2, SDL2_mixer and SDL2_image. On top of this the music and graphics of the game are also not included. Also, the makefile included is pretty specific for my machine, so good luck.
 
 The code is based on the book SDL Game Development by Shaun Mitchell.
+
+Eventually, i will add the libraries and assets required to compile this properly.
 
 ## Improvements 
 The code requires a few major improvements, and a few more minor ones. These include:
@@ -12,7 +14,7 @@ The code requires a few major improvements, and a few more minor ones. These inc
 * Add collision with "dangerous" tiles
 * Add collision with enemies
 * Add bullets and enable collisions with them
-* Regain the ability to compile properly on other mac and linux machines
+* Regain the ability to compile properly on other mac and linux machines without the need to have any SDL libraries pre-installed
 
 These are all potentially very time consuming tasks. However, at this point the game arguably would be "finished". Smaller improvements may consist of:
 * allow the buttons to be added in Tiled, rather than in the test.xml file
