@@ -12,7 +12,7 @@ m_invulnerableCounter(0)
 
 void Player::draw()
 {
-    if(m_velocity.getX() < 0)
+    if(!dirFace)
     {
         TextureManager::Instance() -> drawFrame(m_textureID,
         (Uint32)m_position.getX(), (Uint32)m_position.getY(),
@@ -91,11 +91,13 @@ void Player::handleInput()
     if(TheInputHandler::Instance() -> isKeyDown(SDL_SCANCODE_RIGHT) ||
        TheInputHandler::Instance() -> isKeyDown(SDL_SCANCODE_D))
     {
+        dirFace = true;
         m_velocity.setX(2);
     }
     if(TheInputHandler::Instance() -> isKeyDown(SDL_SCANCODE_LEFT) ||
        TheInputHandler::Instance() -> isKeyDown(SDL_SCANCODE_A))
     {
+        dirFace = false;
         m_velocity.setX(-2);
     }
     if(TheInputHandler::Instance() -> isKeyDown(SDL_SCANCODE_UP) ||
@@ -113,6 +115,7 @@ void Player::handleInput()
 
 void Player::load(std::unique_ptr<LoaderParams> const &pParams)
 {
+    dirFace = true;
     SDLGameObject::load(std::move(pParams));
 }
 
@@ -162,17 +165,17 @@ void Player::handleAnimation()
 
     if(!m_bDead)
     {
-        if(m_velocity.getX() < -1.5)
+        if(m_velocity.getX() == 0)
+        {
+            m_angle = 0.0;
+        }
+        else if(!dirFace)
         {
             m_angle = -10.0;
         }
-        else if(m_velocity.getX() > 1.5)
-        {
+        else if(dirFace)
+        { 
             m_angle = 10.0;
-        }
-        else 
-        {
-            m_angle = 0.0;
         }
     }
     m_currentFrame = int(((SDL_GetTicks() / (100)) % m_numFrames));
@@ -183,25 +186,55 @@ void Player::handleAnimation()
 void Player::handleMovement(Vector2D velocity)
 {
     Vector2D newPos = m_position;
-
-    if (m_velocity.m_x != 0)
+    Vector2D newPos_ = m_position;
+    
+    if(!scrollTrue)
     {
-        newPos.m_x = m_position.m_x + m_velocity.m_x;
+        newPos.m_x  = m_position.m_x + velocity.m_x;
         if(!checkCollideTile(newPos))
         {
         // no collision, add to the actual x position
             m_position.m_x = newPos.m_x;
         }
-        else if(m_velocity.m_x > 0)
-        {
-            m_velocity.setX(TheGame::Instance()->getScrollSpeed());
-            m_position.m_x -= m_velocity.m_x;
-         }
         else
         {
         // collision, stop x movement
             m_velocity.m_x = 0;
         }
+    }
+    else if (m_velocity.m_x > 0)
+    {
+        newPos.m_x = m_position.m_x + m_velocity.m_x;
+        newPos_.m_x = m_position.m_x + 32;
+
+        if(!checkCollideTile(newPos_))
+        {
+        // no collision, add to the actual x position
+            m_position.m_x = newPos.m_x;
+        }
+     //   else if(m_velocity.m_x > 0)
+        else
+        {
+            m_velocity.setX(TheGame::Instance()->getScrollSpeed());
+            m_position.m_x -= m_velocity.m_x;
+         }
+    }
+    else if (m_velocity.m_x < 0)
+    {
+        newPos.m_x = m_position.m_x + m_velocity.m_x;
+        newPos_.m_x = m_position.m_x  - 32;
+
+        if(!checkCollideTile(newPos_))
+        {
+        // no collision, add to the actual x position
+            m_position.m_x = newPos.m_x;
+        }
+     //   else if(m_velocity.m_x > 0)
+        else
+        {
+            m_velocity.setX(TheGame::Instance()->getScrollSpeed());
+            m_position.m_x -= m_velocity.m_x;
+         }
     }
     else
     {
