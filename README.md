@@ -9,9 +9,10 @@ Eventually, i will add the libraries and assets required to compile this properl
 
 ## Improvements 
 The code requires a few major improvements, and a few more minor ones. These include:
-* make is so when you scroll of the screen you die
-    * this will require testing of the death, respawning and lives parts on the Player::update function. This may not be a small task.
+* make it so when you scroll of the screen you die - for now just respawn at the top-left of screen
 * Add collision with "dangerous" tiles
+* add lives/ death animation/ invulnerability after respawn
+* add health bar/ lives bar/ etc
 * Add collision with enemies
 * Add bullets and enable collisions with them
 * Regain the ability to compile properly on other mac and linux machines without the need to have any SDL libraries pre-installed
@@ -23,6 +24,7 @@ These are all potentially very time consuming tasks. However, at this point the 
 * Level select screen/ way to select level from command line to allow for easier debugging.
 * when pressing a menu button the sound plays to late, meaning you hear the noise on the next screen
 * Investigate how to change screen size
+* look into cleaning up scrolling collision - might help to use other version on character .png, where background isnt transparent.
 * Generally cleaning up the code, many files include old functions that are no longer used.
 
 More improvements to the game may include:
@@ -30,4 +32,6 @@ More improvements to the game may include:
 * Score/ Timer/ ???
 * Touching a flag to end the level, like mario
 
+
+The end goal would be that the files could be downloaded on any mac or linux system, and without any installing any sdl2 libraries beforehand, be able to run the makefile and successfully compile the game.
 
