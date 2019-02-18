@@ -6,6 +6,7 @@
 #include "SDLGameObject.h"
 #include "LoaderParams.h"
 #include "GameObjectFactory.h"
+#include "scrollTrue.h"
 
 class Player : public SDLGameObject //inherit from sdlgameobject
 {
@@ -30,6 +31,8 @@ private:
     int m_invulnerable;
     int m_invulnerableTime;
     int m_invulnerableCounter;
+
+    bool dirFace;
 };
 
 class PlayerCreator : public BaseCreator

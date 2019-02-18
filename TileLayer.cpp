@@ -1,9 +1,9 @@
 #include "TileLayer.h"
 #include "Game.h"
 #include "TextureManager.h"
+#include "scrollTrue.h"
 
-//extern int TS;
-//extern int MS;
+bool scrollTrue;
 
 TileLayer::TileLayer(int tileSize, const std::vector<Tileset> &tilesets) : 
     m_tileSize(tileSize), m_tilesets(tilesets), m_position(0,0), m_velocity(0,0)
@@ -18,11 +18,13 @@ void TileLayer::update()
     if(m_position.getX() < ((m_mapWidth * m_tileSize) - 
                     TheGame::Instance()->getGameWidth()) - m_tileSize)
     {
+        scrollTrue = true;
         m_velocity.setX(TheGame::Instance()->getScrollSpeed());
         m_position += m_velocity;
     }
     else
     {
+        scrollTrue = false;
         m_velocity.setX(0);
     }
 

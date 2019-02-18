@@ -68,7 +68,7 @@ void Player::update()
             {
                 TheGame::Instance()->setLevelComplete(true);
             }
-
+            //std::cout << m_position.getX() << "\n";
         }
         else  //if doing death animation
         {

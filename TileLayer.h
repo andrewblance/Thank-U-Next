@@ -6,7 +6,9 @@
 #include "Layer.h"
 #include "Level.h"
 #include "vector2d.h"
+//#include "scrollTrue.h"
 
+//bool scrollTrue;
 class TileLayer : public Layer
 {
     public:
