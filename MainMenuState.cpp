@@ -42,6 +42,8 @@ void MainMenuState::render()
 
 bool MainMenuState::onEnter()
 {
+    TheGame::Instance() -> setPlayerLives(3);
+
     LevelParser levelParser;
     pLevel = levelParser.parseLevel("assets/mainmenu.tmx");
 

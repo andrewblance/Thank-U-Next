@@ -19,6 +19,7 @@ void GameOverState::s_gameOverToMain()
 
 void GameOverState::s_restartPlay()
 {
+   TheGame::Instance() -> setPlayerLives(3);
    TheGame::Instance() -> setCurrentLevel( TheGame::Instance() -> 
                           getCurrentLevel() - 1 );
    TheGame::Instance() -> getStateMachine() -> changeState(new PlayState()); 

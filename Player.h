@@ -27,6 +27,7 @@ private:
     void ressurect();
     void handleAnimation();
     void handleMovement(Vector2D velocity);
+    void levCom();
 
     int m_invulnerable;
     int m_invulnerableTime;

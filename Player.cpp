@@ -32,6 +32,7 @@ void Player::draw()
 
 void Player::update()
 {
+
     if(TheGame::Instance() -> getLevelComplete()) //if level is complete
     {
         if((m_position.getX()) >= TheGame::Instance() -> getGameWidth())
@@ -47,7 +48,7 @@ void Player::update()
             handleAnimation();
         }
     }
-    else
+    else 
     {
         if(!m_bDying)   //not dying
         {
@@ -55,30 +56,31 @@ void Player::update()
             m_velocity.setY(0);
 
             handleInput();
-            //SDLGameObject::update();
-           
-            if(checkCollideTile(m_position))
-            {
-                std::cout<<"coll" << "\n";
-            }
+
             handleMovement(m_velocity);
             handleAnimation();
 //this bit, nope:
-            if((m_position.getX()+30) >= TheGame::Instance() -> getGameWidth())
-            {
-                TheGame::Instance()->setLevelComplete(true);
-            }
-            //std::cout << m_position.getX() << "\n";
+            levCom();
+            //std::cout << m_position.getY() << "\n";
         }
         else  //if doing death animation
         {
             m_currentFrame = int(((SDL_GetTicks() / (100)) % m_numFrames));
             if(m_dyingCounter == m_dyingTime)
-            {
+            {   
+                std::cout<< "try ressurect" <<"\n";
                 ressurect();
             }
             m_dyingCounter++;
         }
+    }
+}
+
+void Player::levCom()
+{
+    if((m_position.getX()+30) >= TheGame::Instance() -> getGameWidth())
+    {
+        TheGame::Instance()->setLevelComplete(true);
     }
 }
 
@@ -116,6 +118,7 @@ void Player::handleInput()
 void Player::load(std::unique_ptr<LoaderParams> const &pParams)
 {
     dirFace = true;
+    m_dyingTime = 100;
     SDLGameObject::load(std::move(pParams));
 }
 
@@ -124,16 +127,9 @@ void Player::ressurect()
     TheGame::Instance() -> setPlayerLives(TheGame::Instance()
                         -> getPlayerLives() - 1);
 
-    m_position.setX(10);
-    m_position.setY(200);
+    m_position.setX(69);
+    m_position.setY(69);
     m_bDying = false;
-
-    m_textureID = "player";
-
-    m_currentFrame = 0;
-    m_numFrames = 12;
-    m_width = 80;
-    m_height = 80;
 
     m_dyingCounter = 0;
     m_invulnerable = true;
@@ -201,6 +197,10 @@ void Player::handleMovement(Vector2D velocity)
         // collision, stop x movement
             m_velocity.m_x = 0;
         }
+    }
+    else if (m_position.getX() < -60)
+    {
+        m_bDying = true;
     }
     else if (m_velocity.m_x > 0)
     {

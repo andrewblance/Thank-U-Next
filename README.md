@@ -9,7 +9,8 @@ Eventually, i will add the libraries and assets required to compile this properl
 
 ## Improvements 
 The code requires a few major improvements, and a few more minor ones. These include:
-* make it so when you scroll of the screen you die - for now just respawn at the top-left of screen
+* make it so when you scroll of the screen you die - for now just respawn at the top-left of screen (DONE)
+* need to have seperate end-game and you-died screens, as the restart button should do different things in either context
 * Add collision with "dangerous" tiles
 * add lives/ death animation/ invulnerability after respawn
 * add health bar/ lives bar/ etc
@@ -35,3 +36,10 @@ More improvements to the game may include:
 
 The end goal would be that the files could be downloaded on any mac or linux system, and without any installing any sdl2 libraries beforehand, be able to run the makefile and successfully compile the game.
 
+
+## Patch Notes
+* 0.1
+    * if you are pushed off screen you now die
+    * resurect function works
+    * you have a max num of lives now, when you run out you go to game over
+    * theres a specific function now that decides if you completed the level by going far enough right

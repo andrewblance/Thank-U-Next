@@ -70,7 +70,7 @@ bool SDLGameObject::checkCollideTile(Vector2D newPos)
     {
         return false;
     }
-    if(newPos.m_x  <= -16 )
+    if(newPos.m_x  <= -100 )
     {
         return true;
     }  

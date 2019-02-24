@@ -17,7 +17,11 @@ void PlayState::update()
     {
         TheGame::Instance() -> getStateMachine() -> 
         pushState(new PauseState());
-    }  
+    } 
+    if(TheGame::Instance()->getPlayerLives() == 0)
+    {
+        TheGame::Instance()->getStateMachine()->changeState(new GameOverState());
+    }
     pLevel -> update();
 } 
 
@@ -28,12 +32,13 @@ void PlayState::render()
 
 bool PlayState::onEnter()
 {
+    TheGame::Instance()->setPlayerLives(3);
     //parse the state :) 
 
     LevelParser levelParser; 
     pLevel = levelParser.parseLevel(TheGame::Instance() -> 
                 getLevelFiles()[TheGame::Instance()->getCurrentLevel() - 1].c_str());
-
+    
     std::cout<< "enter playstate \n";
     return true;
 }
