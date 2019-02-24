@@ -77,6 +77,8 @@ int width, int height, bool fullscreen)
 
     TheSoundManager::Instance() -> playMusic("music1", -1);
 
+    TheTextureManager::Instance() -> load("assets/lives.png", "lives", m_pRenderer);
+
     TheGameObjectFactory::Instance() -> registerType("MenuButton", 
     new MenuButtonCreator());
     TheGameObjectFactory::Instance() -> registerType("Player", 

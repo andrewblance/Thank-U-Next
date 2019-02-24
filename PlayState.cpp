@@ -28,6 +28,13 @@ void PlayState::update()
 void PlayState::render()
 { 
     pLevel -> render();
+
+    int currentFrame;
+    currentFrame = TheGame::Instance() -> getPlayerLives();
+
+    TheTextureManager::Instance()->drawFrame("lives", 
+            100, 100, 10, 30, 0, currentFrame, 
+            TheGame::Instance()->getRenderer(), 0.0, 255);
 }
 
 bool PlayState::onEnter()

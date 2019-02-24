@@ -38,6 +38,8 @@ The end goal would be that the files could be downloaded on any mac or linux sys
 
 
 ## Patch Notes
+* 0.15
+    * began adding a health bar, will need to make a nicer one before its totally right
 * 0.1
     * if you are pushed off screen you now die
     * resurect function works
