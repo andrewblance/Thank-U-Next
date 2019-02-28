@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="right-down" width="60" height="15" tilewidth="32" tileheight="32" infinite="0" nextobjectid="51">
+ <properties>
+  <property name="bckg" value="assets/bckg.png"/>
+  <property name="eye" value="assets/eyeT.png"/>
+  <property name="summoner" value="assets/oie_transparent.png"/>
+  <property name="wizard" value="assets/wizard.png"/>
+ </properties>
+ <tileset firstgid="1" name="cavesofgallet_tiles_1" tilewidth="32" tileheight="32" tilecount="56" columns="8">
+  <image source="cavesofgallet_tiles_1.png" trans="000000" width="256" height="224"/>
+ </tileset>
+ <tileset firstgid="57" name="cavesofgallet_tiles" tilewidth="32" tileheight="32" tilecount="96" columns="8">
+  <image source="cavesofgallet_tiles.png" trans="000000" width="256" height="384"/>
+ </tileset>
+ <objectgroup name="Object Layer 2" visible="0">
+  <object id="20" name="Background" type="ScrollingBackground" x="0" y="0" width="32" height="32">
+   <properties>
+    <property name="animSpeed" type="float" value="0.20000000000000001"/>
+    <property name="numFrames" type="int" value="1"/>
+    <property name="textureHeight" type="int" value="480"/>
+    <property name="textureID" value="bckg"/>
+    <property name="textureWidth" type="int" value="640"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="Tile Layer 1" width="60" height="15" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMAoGHjAOYUzIP8PJr8h+QvZbDQNDQymEJjk8hkKYoPuXEKCHf0kBg8W/5LqVWD249OMzjxL/TgGme0LuQRdjxCFGSfzisocSc5BBCRAXMzAcAPr3AD47cbkDnzpyALa4HgXkAwAydAbi
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="60" height="15">
+  <properties>
+   <property name="collidable" value=""/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztV81KA0EMTkFlWyxqf1iqiFu1QmmPLb32UfYZPAhCD3vwrCL2Po/SR+mj+MVJbEh/QGw9beAjM5nMTL6ZpDutE1EdOAJaRGFAlHOfNbBk2zXRoi5+6tOWvvqzHbpoi60v8+7Ej9s6pm3bl/ULnSfrFk/SZ9j4uohN/Vj3ZX/1URvP70YuOY9RKaWUUkoppexZzoAJcA6cRgQ7XgVqArSLfw7vIDIRjW8rf8+DHQPPvALNuADf1HGuRnu4xLeadQf68BH/TZQvuOZzx3fu+N6s882foRtAAjT3xNfmlZ4ng88TuVhwXqaifyvmfqczxwd9Ur7MxfP9QCwvMaZvH8SU69g9MMacEaCxcd2gHzAWHoiyTfGkZr2G2b8S+Qf187FsE16PaxXv1KXli/fiYubuB/0p75MIF79HR87enomODcXWczmDMwje5gVrBsvzXfaoxTcv6bubf2923XUq4Fq9pfj+7st7md/pPp8t3+aGfNZ7YDzG/hrfoTtDcM2sTfJg2lvpgvVIOL4Cb7S6X92P62gga/i45Ax+dEt4ePh81vpNhItftynzjin+X/o048p3bHJc7fZ+1c8D8zJtX9GqXlijjjKuI//7uk1aMv9kwz5zA7UlkcuC534BYKxpMw==
+  </data>
+ </layer>
+ <layer name="Tile Layer 3" width="60" height="15" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwSgYBaSAWiQ8EsCof4c3GPUvKugB4k4g7sIj34NDrIeAOnIAzByQm7ohdAOyfZTYAdILAGmpErg=
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1" visible="0">
+  <object id="3" name="Summoner" type="Player" x="169.169" y="189.335" width="16" height="16">
+   <properties>
+    <property name="numFrames" type="int" value="12"/>
+    <property name="textureHeight" type="int" value="80"/>
+    <property name="textureID" value="summoner"/>
+    <property name="textureWidth" type="int" value="80"/>
+   </properties>
+  </object>
+  <object id="39" name="Eye1" type="Eye" x="580.071" y="295.374" width="16" height="16">
+   <properties>
+    <property name="numFrames" type="int" value="4"/>
+    <property name="textureHeight" type="int" value="80"/>
+    <property name="textureID" value="eye"/>
+    <property name="textureWidth" type="int" value="80"/>
+   </properties>
+  </object>
+  <object id="42" name="Eye2" type="Eye" x="633.452" y="245.552" width="16" height="16">
+   <properties>
+    <property name="numFrames" type="int" value="4"/>
+    <property name="textureHeight" type="int" value="80"/>
+    <property name="textureID" value="eye"/>
+    <property name="textureWidth" type="int" value="80"/>
+   </properties>
+  </object>
+  <object id="43" name="Eye3" type="Eye" x="696.626" y="198.406" width="16" height="16">
+   <properties>
+    <property name="numFrames" type="int" value="4"/>
+    <property name="textureHeight" type="int" value="80"/>
+    <property name="textureID" value="eye"/>
+    <property name="textureWidth" type="int" value="80"/>
+   </properties>
+  </object>
+  <object id="44" name="Eye4" type="Eye" x="1143.25" y="73.8505" width="16" height="16">
+   <properties>
+    <property name="numFrames" type="int" value="4"/>
+    <property name="textureHeight" type="int" value="80"/>
+    <property name="textureID" value="eye"/>
+    <property name="textureWidth" type="int" value="80"/>
+   </properties>
+  </object>
+  <object id="45" name="Eye5" type="Eye" x="1205.52" y="116.555" width="16" height="16">
+   <properties>
+    <property name="numFrames" type="int" value="4"/>
+    <property name="textureHeight" type="int" value="80"/>
+    <property name="textureID" value="eye"/>
+    <property name="textureWidth" type="int" value="80"/>
+   </properties>
+  </object>
+  <object id="46" name="Eye6" type="Eye" x="1274.92" y="164.598" width="16" height="16">
+   <properties>
+    <property name="numFrames" type="int" value="4"/>
+    <property name="textureHeight" type="int" value="80"/>
+    <property name="textureID" value="eye"/>
+    <property name="textureWidth" type="int" value="80"/>
+   </properties>
+  </object>
+  <object id="47" name="Eye8" type="Eye" x="1564.95" y="47.1601" width="16" height="16">
+   <properties>
+    <property name="numFrames" type="int" value="4"/>
+    <property name="textureHeight" type="int" value="80"/>
+    <property name="textureID" value="eye"/>
+    <property name="textureWidth" type="int" value="80"/>
+   </properties>
+  </object>
+  <object id="48" name="Eye9" type="Eye" x="1564.95" y="102.32" width="16" height="16">
+   <properties>
+    <property name="numFrames" type="int" value="4"/>
+    <property name="textureHeight" type="int" value="80"/>
+    <property name="textureID" value="eye"/>
+    <property name="textureWidth" type="int" value="80"/>
+   </properties>
+  </object>
+  <object id="49" name="Eye10" type="Eye" x="1563.17" y="164.598" width="16" height="16">
+   <properties>
+    <property name="numFrames" type="int" value="4"/>
+    <property name="textureHeight" type="int" value="80"/>
+    <property name="textureID" value="eye"/>
+    <property name="textureWidth" type="int" value="80"/>
+   </properties>
+  </object>
+  <object id="50" name="Eye7" type="Eye" x="1315.84" y="362.107" width="16" height="16">
+   <properties>
+    <property name="numFrames" type="int" value="4"/>
+    <property name="textureHeight" type="int" value="80"/>
+    <property name="textureID" value="eye"/>
+    <property name="textureWidth" type="int" value="80"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

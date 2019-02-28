@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" infinite="0" nextobjectid="31">
+ <properties>
+  <property name="exitbutton" value="assets/exit.png"/>
+  <property name="eye" value="assets/eyeT.png"/>
+  <property name="playbutton" value="assets/button.png"/>
+  <property name="summoner" value="assets/oie_transparent.png"/>
+  <property name="wizard" value="assets/wizard.png"/>
+ </properties>
+ <tileset firstgid="1" name="cavesofgallet_tiles_1" tilewidth="32" tileheight="32" tilecount="56" columns="8">
+  <image source="cavesofgallet_tiles_1.png" trans="000000" width="256" height="224"/>
+ </tileset>
+ <tileset firstgid="57" name="cavesofgallet_tiles" tilewidth="32" tileheight="32" tilecount="96" columns="8">
+  <image source="cavesofgallet_tiles.png" trans="000000" width="256" height="384"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="20" height="15">
+  <data encoding="base64" compression="zlib">
+   eJytUzsOgkAQHRMTLdhgobFSEKUgolRq61E4Cgew8wJ7lD2KR/ENM0sIscCwxcvMG4aX+W1ERAaYA2sieyaqmbMFPhzbETmjeT5no9znczwiauCnC/DZSCzx3xBX/ZbDL/7Q+oUDNO7qV8BrIiKBXaHXB/z3RGBuhFlari+E3g1aJqAe9uuw/7oKpGfkrlqtbaB+eX6slwTQK6XGIHonkrs76q0kvXguaC6YL1v08WSbS09OOdeTMi91p7g953fr9ZCXcizDN8zCZbKzlhtFIW+2s5mgexcDvVr17Nh3Fus+Y9XyvK9XaO37kZqJ2kePfwHTwnnQ
+  </data>
+ </layer>
+</map>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" infinite="0" nextobjectid="8">
+ <properties>
+  <property name="summoner" value="assets/oie_transparent.png"/>
+  <property name="wizard" value="assets/wizard.png"/>
+ </properties>
+ <tileset firstgid="1" name="cavesofgallet_tiles_1" tilewidth="32" tileheight="32" tilecount="56" columns="8">
+  <image source="cavesofgallet_tiles_1.png" trans="000000" width="256" height="224"/>
+ </tileset>
+ <tileset firstgid="57" name="cavesofgallet_tiles" tilewidth="32" tileheight="32" tilecount="96" columns="8">
+  <image source="cavesofgallet_tiles.png" trans="000000" width="256" height="384"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="20" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgYKQyZiIgr0WGGXo41BkRYRZILwcSnxWIzYCYmUz/mZGhR50G4QzD5PoDHQPD6AGucCYXkxNWo3gU48IAHzkDyw==
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1"/>
+</map>
