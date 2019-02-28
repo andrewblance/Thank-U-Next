@@ -1,9 +1,7 @@
 # Thank U, Next (a side scrolling shooter game)
 
 ## Introduction
-This repo contains the begins of code to make a side scrolling shooter/ platformer game. At the current moment it will not compile on a machine unless you can supply libraries for SDL2, SDL2_mixer and SDL2_image. On top of this the music and graphics of the game are also not included. Also, the makefile included is pretty specific for my machine, so good luck.
-
-The code is based on the book SDL Game Development by Shaun Mitchell.
+This repo contains the begins of code to make a side scrolling shooter/ platformer game. At the current moment it will not compile on a machine unless you can supply libraries for SDL2, SDL2_mixer and SDL2_image. Also, the makefile included is pretty specific for my machine, so good luck.
 
 Eventually, i will add the libraries and assets required to compile this properly.
 
@@ -38,6 +36,16 @@ More improvements to the game may include:
 
 The end goal would be that the files could be downloaded on any mac or linux system, and without any installing any sdl2 libraries beforehand, be able to run the makefile and successfully compile the game.
 
+## Assets
+The code is based on Shaun Mitchell's book SDL Game Development.
+
+The assets have all come from:
+* The tileset (Caves of Gallet) - Adam Saltsman
+* Health bar (pixel health bar asset pack 2) and buttons (button asset pack) - adwitr
+* Flying Eye Creature/ The Summoner/ Wizard Sprite - Warren Clark
+* Tiny Button Push : available at soundbible.com
+
+The game is also meant to play a 8-bit version of Thank U, Next by Ariana Grange, but I dont think i can distribute that, so you will just have to imagine it.
 
 ## Patch Notes
 * 0.15
