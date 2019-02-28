@@ -45,7 +45,7 @@ I have created the assets in this game from the following sources:
 * Flying Eye Creature/ The Summoner/ Wizard Sprite - Warren Clark
 * Tiny Button Push : available at soundbible.com
 
-The game is also meant to play a 8-bit version of Thank U, Next by Ariana Grange, but I dont think i can distribute that, so you will just have to imagine it.
+The game is also meant to play a 8-bit version of Thank U, Next by Ariana Grande, but I dont think i can distribute that, so you will just have to imagine it.
 
 ## Patch Notes
 * 0.15
