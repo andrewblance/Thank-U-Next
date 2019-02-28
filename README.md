@@ -39,7 +39,7 @@ The end goal would be that the files could be downloaded on any mac or linux sys
 ## Assets
 The code is based on Shaun Mitchell's book SDL Game Development.
 
-The assets have all come from:
+I have created the assets in this game from the following sources:
 * The tileset (Caves of Gallet) - Adam Saltsman
 * Health bar (pixel health bar asset pack 2) and buttons (button asset pack) - adwitr
 * Flying Eye Creature/ The Summoner/ Wizard Sprite - Warren Clark
