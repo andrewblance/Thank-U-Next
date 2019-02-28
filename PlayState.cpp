@@ -31,9 +31,9 @@ void PlayState::render()
 
     int currentFrame;
     currentFrame = TheGame::Instance() -> getPlayerLives();
-
+    int cF = cF + 1;
     TheTextureManager::Instance()->drawFrame("lives", 
-            100, 100, 10, 30, 0, currentFrame, 
+            10, 10, 222, 16, 0, currentFrame, 
             TheGame::Instance()->getRenderer(), 0.0, 255);
 }
 
