@@ -13,7 +13,7 @@ The code requires a few major improvements, and a few more minor ones. These inc
 * need to have seperate end-game and you-died screens, as the restart button should do different things in either context
 * Add collision with "dangerous" tiles
 * add lives/ death animation/ invulnerability after respawn
-* add health bar/ lives bar/ etc
+* add health bar/ lives bar/ etc (DONE)
 * Add collision with enemies
 * Add bullets and enable collisions with them
 * Regain the ability to compile properly on other mac and linux machines without the need to have any SDL libraries pre-installed
@@ -32,6 +32,8 @@ More improvements to the game may include:
 * Add more enemies
 * Score/ Timer/ ???
 * Touching a flag to end the level, like mario
+* the ability to parse in text would be great
+* right now theres no map up or down, only to your left or right. Changing this would mean improve level variety
 
 
 The end goal would be that the files could be downloaded on any mac or linux system, and without any installing any sdl2 libraries beforehand, be able to run the makefile and successfully compile the game.
