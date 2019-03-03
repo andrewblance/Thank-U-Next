@@ -48,6 +48,8 @@ I have created the assets in this game from the following sources:
 The game is also meant to play a 8-bit version of Thank U, Next by Ariana Grande, but I dont think i can distribute that, so you will just have to imagine it.
 
 ## Patch Notes
+* 0.16
+    * health bar "fixed". collidable ground now seperated from other collidable objects
 * 0.15
     * began adding a health bar, will need to make a nicer one before its totally right
 * 0.1

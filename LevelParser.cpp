@@ -66,7 +66,8 @@ Level* LevelParser::parseLevel(const char *levelFile)
             {
                 std::cout << "parsing data" << "\n";
                 parseTileLayer(e, pLevel -> getLayers(), pLevel -> getTilesets(), 
-                                pLevel -> getCollisionLayers());
+                                pLevel -> getCollisionLayers(), 
+                                pLevel -> getCollisionSafeLayers());
             } 
         }
     }
@@ -117,10 +118,14 @@ void LevelParser::parseTilesets(TiXmlElement* pTilesetRoot,
 void LevelParser::parseTileLayer(TiXmlElement* pTileElement,
     std::vector<Layer*> *pLayers,
     const std::vector<Tileset>* pTilesets,
-    std::vector<TileLayer*> *pCollisionLayers)
+    std::vector<TileLayer*> *pCollisionLayers,
+    std::vector<TileLayer*> *pCollisionSafeLayers)
 {
     TileLayer* pTileLayer = new TileLayer(m_tileSize, *pTilesets);
+
     bool collidable = false;
+    bool collidableSafe = false;
+
     //places to store things:
     std::vector<std::vector<int> > data;
 
@@ -144,6 +149,13 @@ void LevelParser::parseTileLayer(TiXmlElement* pTileElement,
                     {
                         collidable = true;
                         std::cout << "hot dog this layer be collidable" << "\n";
+                    }
+
+                    if(property -> Attribute("name") ==
+                                    std::string("collidableSafe"))
+                    {
+                        collidableSafe = true;
+                        std::cout << "cant go through this" << "\n";
                     }
                 }
             }
@@ -194,6 +206,10 @@ void LevelParser::parseTileLayer(TiXmlElement* pTileElement,
     if(collidable)
     {
         pCollisionLayers->push_back(pTileLayer);
+    }
+    if(collidableSafe)
+    {
+        pCollisionSafeLayers->push_back(pTileLayer);
     }
     pLayers -> push_back(pTileLayer);
 }
@@ -267,7 +283,10 @@ void LevelParser::parseObjectLayer(TiXmlElement* pObjectElement,
             pGameObject -> load(std::unique_ptr<LoaderParams>(new
                 LoaderParams(x, y, width, height, textureID, numFrames,
                     callbackID, animSpeed)));
+
             pGameObject->setCollisionLayers(pLevel->getCollisionLayers());
+            pGameObject->setCollisionSafeLayers(pLevel->getCollisionSafeLayers());
+
             if(type == "Player")
             {
                 pLevel -> setPlayer(dynamic_cast<Player*>(pGameObject));

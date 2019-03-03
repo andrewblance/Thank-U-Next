@@ -76,8 +76,8 @@ bool SDLGameObject::checkCollideTile(Vector2D newPos)
     }  
     else
     { 
-    for(std::vector<TileLayer*>::iterator it = m_pCollisionLayers -> begin(); 
-                        it != m_pCollisionLayers -> end(); ++it)
+    for(std::vector<TileLayer*>::iterator it = m_pCollisionSafeLayers -> begin(); 
+                        it != m_pCollisionSafeLayers -> end(); ++it)
     {
         TileLayer* pTileLayer = (*it);
         std::vector<std::vector<int> > tiles = pTileLayer -> getTileIDs();

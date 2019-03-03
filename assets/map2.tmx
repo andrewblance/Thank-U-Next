@@ -28,15 +28,18 @@
    eJxjYBgFo2AUjIJRMAoGHjAOYUzIP8PJr8h+QvZbDQNDQymEJjk8hkKYoPuXEKCHf0kBg8W/5LqVWD249OMzjxL/TgGme0LuQRdjxCFGSfzisocSc5BBCRAXMzAcAPr3AD47cbkDnzpyALa4HgXkAwAydAbi
   </data>
  </layer>
- <layer name="Tile Layer 2" width="60" height="15">
+ <layer name="Tile Layer 2" width="60" height="15" visible="0">
   <properties>
-   <property name="collidable" value=""/>
+   <property name="collidableSafe" value=""/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztV81KA0EMTkFlWyxqf1iqiFu1QmmPLb32UfYZPAhCD3vwrCL2Po/SR+mj+MVJbEh/QGw9beAjM5nMTL6ZpDutE1EdOAJaRGFAlHOfNbBk2zXRoi5+6tOWvvqzHbpoi60v8+7Ej9s6pm3bl/ULnSfrFk/SZ9j4uohN/Vj3ZX/1URvP70YuOY9RKaWUUkoppexZzoAJcA6cRgQ7XgVqArSLfw7vIDIRjW8rf8+DHQPPvALNuADf1HGuRnu4xLeadQf68BH/TZQvuOZzx3fu+N6s882foRtAAjT3xNfmlZ4ng88TuVhwXqaifyvmfqczxwd9Ur7MxfP9QCwvMaZvH8SU69g9MMacEaCxcd2gHzAWHoiyTfGkZr2G2b8S+Qf187FsE16PaxXv1KXli/fiYubuB/0p75MIF79HR87enomODcXWczmDMwje5gVrBsvzXfaoxTcv6bubf2923XUq4Fq9pfj+7st7md/pPp8t3+aGfNZ7YDzG/hrfoTtDcM2sTfJg2lvpgvVIOL4Cb7S6X92P62gga/i45Ax+dEt4ePh81vpNhItftynzjin+X/o048p3bHJc7fZ+1c8D8zJtX9GqXlijjjKuI//7uk1aMv9kwz5zA7UlkcuC534BYKxpMw==
   </data>
  </layer>
- <layer name="Tile Layer 3" width="60" height="15" visible="0">
+ <layer name="Tile Layer 3" width="60" height="15">
+  <properties>
+   <property name="collidable" value=""/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjIJRMApGwSgYBaSAWiQ8EsCof4c3GPUvKugB4k4g7sIj34NDrIeAOnIAzByQm7ohdAOyfZTYAdILAGmpErg=
   </data>

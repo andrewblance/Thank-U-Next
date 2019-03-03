@@ -23,7 +23,8 @@ class LevelParser
         void parseTileLayer(TiXmlElement* pTileElement, 
             std::vector<Layer*> *pLayers, 
             const std::vector<Tileset>* pTilesets,
-            std::vector<TileLayer*> *pCollisionLayers);
+            std::vector<TileLayer*> *pCollisionLayers,
+            std::vector<TileLayer*> *pCollisionSafeLayers);
 
         void parseTextures(TiXmlElement* pTextureRoot);
         

@@ -34,13 +34,18 @@ class Level
     std::vector<TileLayer*>* getCollisionLayers() { return &m_collisionLayers; }
     const std::vector<TileLayer*>& getCollidableLayers() { return m_collisionLayers; }
 
+    std::vector<TileLayer*>* getCollisionSafeLayers() 
+                                { return &m_collisionSafeLayers; }
+    const std::vector<TileLayer*>& getCollidableSafeLayers() 
+                                { return m_collisionSafeLayers; }
+
     Player* getPlayer() { return m_pPlayer; }
     void setPlayer(Player* pPlayer) { m_pPlayer = pPlayer; }
 
     private:
     Player* m_pPlayer;
     std::vector<TileLayer*> m_collisionLayers;
-
+    std::vector<TileLayer*> m_collisionSafeLayers;
     std::vector<Tileset> m_tilesets;
     std::vector<Layer*> m_layers;
 

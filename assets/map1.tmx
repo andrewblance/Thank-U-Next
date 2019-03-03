@@ -16,14 +16,17 @@
    eJxjYKAuYARidihNTawHxGxk6GPBIW5GRbeQ4y5quYWamImKZjFDw4ma7jPDE5+jmDq4BIiLGRgOgNjYAEwdMQCkrgeIO4G4C4eaHigmBoDUAQAOdAcj
   </data>
  </layer>
- <layer name="Tile Layer 3" width="20" height="15" visible="0">
+ <layer name="Tile Layer 3" width="20" height="15">
+  <properties>
+   <property name="collidable" value=""/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjALagB4g7gTiLjzyPSSYBQC0bANE
   </data>
  </layer>
- <layer name="Tile Layer 2" width="20" height="15">
+ <layer name="Tile Layer 2" width="20" height="15" visible="0">
   <properties>
-   <property name="collidable" value=""/>
+   <property name="collidableSafe" value=""/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzjZWBg4AViFiAWYWBYoM3AkADig2ggfgASk2VgOMALVQdTIwrlw9SDxIF0A8MoGAWjYFgAFSBWBWJTYP5XhfAXwOQ4IXiBADDP8wPZAlAxLijmRFILA1OAmBGIWRkg5c0UpPJCGIIbeoA0DAsCsRAEN0gByxmQOgBmYhFf

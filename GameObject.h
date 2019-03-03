@@ -35,6 +35,9 @@ public:
     void setCollisionLayers(std::vector<TileLayer*>* layers) 
                     { m_pCollisionLayers = layers; }
 
+    void setCollisionSafeLayers(std::vector<TileLayer*>* layers) 
+                    { m_pCollisionSafeLayers = layers; }
+
 protected:
     GameObject() : m_position(0,0),
                    m_velocity(0,0),
@@ -76,6 +79,7 @@ protected:
     int m_alpha;
 
     std::vector<TileLayer*>* m_pCollisionLayers;
+    std::vector<TileLayer*>* m_pCollisionSafeLayers;
 };
 
 #endif
