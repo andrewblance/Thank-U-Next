@@ -18,7 +18,7 @@ public:
     virtual void draw();
     virtual void update();
     virtual void clean();
-    virtual void collision(){};
+    virtual void collision();
 
     virtual std::string type() { return "Player"; }
 

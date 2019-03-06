@@ -5,11 +5,12 @@
 #include "GameObject.h"
 #include <vector>
 #include <iostream>
+#include "CollisionManager.h"
 
 class ObjectLayer : public Layer
 {
     public:
-    virtual void update();
+    virtual void update(Level* pLevel);
     virtual void render();
 
     std::vector<GameObject*>* getGameObjects()
@@ -19,6 +20,7 @@ class ObjectLayer : public Layer
 
     private:
     std::vector<GameObject*> m_gameObjects;
+    CollisionManager m_collisionManager;
 };
 
 #endif

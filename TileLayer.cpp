@@ -13,7 +13,7 @@ TileLayer::TileLayer(int tileSize, const std::vector<Tileset> &tilesets) :
     m_numRows    = (TheGame::Instance() -> getGameHeight() / m_tileSize);
 }
 
-void TileLayer::update() 
+void TileLayer::update(Level* pLevel) 
 {
     if(m_position.getX() < ((m_mapWidth * m_tileSize) - 
                     TheGame::Instance()->getGameWidth()) - m_tileSize)

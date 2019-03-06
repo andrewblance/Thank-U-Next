@@ -25,11 +25,11 @@ MIX_ :
 play: main.o Game.o TextureManager.o Player.o SDLGameObject.o InputHandler.o MainMenuState.o PlayState.o \
 	GameStateMachine.o MenuButton.o PauseState.o GameOverState.o AnimatedGraphic.o GameObjectFactory.o StateParser.o \
 	 Level.o TileLayer.o LevelParser.o base64.o ObjectLayer.o SoundManager.o \
-	 ScrollingBackground.o BetweenLevelState.o
-	$(CC) $(CFLAGS) -o play -I include include/tinyxml/tinyxml.cpp include/tinyxml/tinystr.cpp include/tinyxml/tinyxmlparser.cpp include/tinyxml/tinyxmlerror.cpp Game.o main.o TextureManager.o  Player.o SDLGameObject.o InputHandler.o MainMenuState.o PlayState.o GameStateMachine.o MenuButton.o PauseState.o GameOverState.o AnimatedGraphic.o GameObjectFactory.o StateParser.o Level.o TileLayer.o LevelParser.o base64.o ObjectLayer.o  SoundManager.o ScrollingBackground.o BetweenLevelState.o $(LDFLAGS) $(LIBS)
+	 ScrollingBackground.o BetweenLevelState.o CollisionManager.o
+	$(CC) $(CFLAGS) -o play -I include include/tinyxml/tinyxml.cpp include/tinyxml/tinystr.cpp include/tinyxml/tinyxmlparser.cpp include/tinyxml/tinyxmlerror.cpp Game.o main.o TextureManager.o  Player.o SDLGameObject.o InputHandler.o MainMenuState.o PlayState.o GameStateMachine.o MenuButton.o PauseState.o GameOverState.o AnimatedGraphic.o GameObjectFactory.o StateParser.o Level.o TileLayer.o LevelParser.o base64.o ObjectLayer.o  SoundManager.o ScrollingBackground.o BetweenLevelState.o CollisionManager.o $(LDFLAGS) $(LIBS)
 
-play_linux: main.o Game.o TextureManager.o Player.o SDLGameObject.o InputHandler.o MainMenuState.o PlayState.o GameStateMachine.o MenuButton.o PauseState.o GameOverState.o AnimatedGraphic.o GameObjectFactory.o StateParser.o Level.o TileLayer.o LevelParser.o base64.o ObjectLayer.o SoundManager.o ScrollingBackground.o BetweenLevelState.o
-	$(CC) $(CFLAGS) -o play -I include include/tinyxml/tinyxml.cpp include/tinyxml/tinystr.cpp include/tinyxml/tinyxmlparser.cpp include/tinyxml/tinyxmlerror.cpp Game.o main.o TextureManager.o  Player.o SDLGameObject.o InputHandler.o MainMenuState.o PlayState.o GameStateMachine.o MenuButton.o PauseState.o GameOverState.o AnimatedGraphic.o GameObjectFactory.o StateParser.o Level.o TileLayer.o LevelParser.o base64.o ObjectLayer.o SoundManager.o ScrollingBackground.o BetweenLevelState.o $(LDFLAGS_L) $(LIBS) -Wl,-rpath,$(PWD)/lib_linux
+play_linux: main.o Game.o TextureManager.o Player.o SDLGameObject.o InputHandler.o MainMenuState.o PlayState.o GameStateMachine.o MenuButton.o PauseState.o GameOverState.o AnimatedGraphic.o GameObjectFactory.o StateParser.o Level.o TileLayer.o LevelParser.o base64.o ObjectLayer.o SoundManager.o ScrollingBackground.o BetweenLevelState.o CollisionManager.o
+	$(CC) $(CFLAGS) -o play -I include include/tinyxml/tinyxml.cpp include/tinyxml/tinystr.cpp include/tinyxml/tinyxmlparser.cpp include/tinyxml/tinyxmlerror.cpp Game.o main.o TextureManager.o  Player.o SDLGameObject.o InputHandler.o MainMenuState.o PlayState.o GameStateMachine.o MenuButton.o PauseState.o GameOverState.o AnimatedGraphic.o GameObjectFactory.o StateParser.o Level.o TileLayer.o LevelParser.o base64.o ObjectLayer.o SoundManager.o ScrollingBackground.o BetweenLevelState.o CollisionManager.o $(LDFLAGS_L) $(LIBS) -Wl,-rpath,$(PWD)/lib_linux
 	
 	
 main.o: main.cpp Game.h TextureManager.h GameObject.h 
@@ -78,5 +78,7 @@ ScrollingBackground.o: ScrollingBackground.cpp ScrollingBackground.h
 	$(CC) $(CFLAGS) -c ScrollingBackground.cpp
 BetweenLevelState.o: BetweenLevelState.cpp BetweenLevelState.h
 	$(CC) $(CFLAGS) -c BetweenLevelState.cpp
+CollisionManager.o: CollisionManager.cpp CollisionManager.h
+	$(CC) $(CFLAGS) -c CollisionManager.cpp
 clean:
 	$(RM) count *.o *~ play

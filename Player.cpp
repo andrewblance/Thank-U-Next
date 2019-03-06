@@ -32,7 +32,6 @@ void Player::draw()
 
 void Player::update()
 {
-
     if(TheGame::Instance() -> getLevelComplete()) //if level is complete
     {
         if((m_position.getX()) >= TheGame::Instance() -> getGameWidth())
@@ -264,4 +263,18 @@ void Player::handleMovement(Vector2D velocity)
         // collision, stop y movement
         m_velocity.m_y = 0;
     } 
+}
+
+void Player::collision()
+{
+    // if the player is not invulnerable then set to dying and change values for death animation tile sheet
+    if(!m_invulnerable)
+    {
+  /*      m_textureID = "largeexplosion";
+        m_currentFrame = 0;
+        m_numFrames = 9;
+        m_width = 60; 
+        m_height = 60; */
+        m_bDying = true;
+    }
 }

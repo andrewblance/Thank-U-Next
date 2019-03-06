@@ -9,10 +9,10 @@ SDLGameObject::SDLGameObject() : GameObject(),
                                  m_moveSpeed(0),
                                  m_dyingTime(0),
                                  m_dyingCounter(0),
-                                 m_bPlayedDeathSound(false),
-                                 m_position(0,0),
-                                 m_velocity(0,0),
-                                 m_acceleration(0,0)
+                                 m_bPlayedDeathSound(false)
+                               //  m_position(0,0),
+                               //  m_velocity(0,0),
+                               //  m_acceleration(0,0)
 {
 }
 
@@ -92,6 +92,7 @@ bool SDLGameObject::checkCollideTile(Vector2D newPos)
         Vector2D startPos = newPos;
         startPos.m_x += 15;
         startPos.m_y += 20;
+
         Vector2D endPos(newPos.m_x + (m_width - 15), (newPos.m_y) + m_height - 4);
 
         for(int i = startPos.m_x; i < endPos.m_x; i++)
@@ -104,6 +105,7 @@ bool SDLGameObject::checkCollideTile(Vector2D newPos)
                 tileid = tiles[tileRow + y][tileColumn + x];
                 if(tileid != 0)
                 {
+                    std::cout << "collide safe" << "\n";
                     return true;
                 }
             }

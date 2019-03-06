@@ -6,6 +6,9 @@
 #include "Layer.h"
 #include "LevelParser.h"
 #include "Player.h"
+#include "CollisionManager.h"
+
+class TileLayer;
 
 struct Tileset
 {

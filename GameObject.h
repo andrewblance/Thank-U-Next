@@ -23,8 +23,11 @@ public:
 
     virtual std::string type() = 0; //type of object
     Vector2D& getPosition() { return m_position; }
+    Vector2D& getVelocity() { return m_velocity; }
+
     int getWidth() { return m_width; }
     int getHeight() { return m_height; }
+
     void scroll(float scrollSpeed) { m_position.setX(m_position.getX()
                         - scrollSpeed); }
     bool updating() { return m_bUpdating;} //object being updated?

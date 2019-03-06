@@ -18,7 +18,7 @@ static bool RectRect(SDL_Rect* A, SDL_Rect* B)
     if( (A -> y + A -> h) - aHBuf <= B -> y + bHBuf) {return false;}
 
     //if top of a is more than top of b => no collision
-    if( A -> y +  aHBuf            => (B -> y + B -> h) -  bHBuf) {return false;}
+    if( A -> y +  aHBuf            >= (B -> y + B -> h) -  bHBuf) {return false;}
 
     //if right of a is less than left of b => no collision
     if( (A -> x + A -> w) - aWBuf  <= B -> x + bWBuf) {return false;}
@@ -26,6 +26,6 @@ static bool RectRect(SDL_Rect* A, SDL_Rect* B)
     //if bottom of a is less than top of b => no collision
     if( A -> x + aWBuf             >= (B -> x + B -> w) - bWBuf) {return false;}
 
-    return true
-
+    return true;
+}
 #endif

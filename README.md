@@ -9,8 +9,8 @@ Eventually, i will add the libraries and assets required to compile this properl
 The code requires a few major improvements, and a few more minor ones. These include:
 * make it so when you scroll of the screen you die - for now just respawn at the top-left of screen (DONE)
 * need to have seperate end-game and you-died screens, as the restart button should do different things in either context
-* Add collision with "dangerous" tiles
-* add lives/ death animation/ invulnerability after respawn
+* Add collision with "dangerous" tiles (DONE - could be fine tuned a lil though)
+* add lives/ death animation/ invulnerability after respawn (DONE)
 * add health bar/ lives bar/ etc (DONE)
 * Add collision with enemies
 * Add bullets and enable collisions with them
@@ -48,6 +48,8 @@ I have created the assets in this game from the following sources:
 The game is also meant to play a 8-bit version of Thank U, Next by Ariana Grande, but I dont think i can distribute that, so you will just have to imagine it.
 
 ## Patch Notes
+* 0.20
+    * colliding with water and lava kills you
 * 0.16
     * health bar "fixed". collidable ground now seperated from other collidable objects
 * 0.15
