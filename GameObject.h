@@ -3,9 +3,12 @@
 
 #include <iostream>
 #include <string>
+#include <iostream>
+#include <memory>
 #include "include/SDL2/SDL.h"
 #include "LoaderParams.h"
 #include "vector2d.h"
+#include <vector>
 
 class TileLayer;
 

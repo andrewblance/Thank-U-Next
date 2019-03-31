@@ -1,37 +1,15 @@
 CC = g++ 
 CFLAGS = -g -m64 
 
-default: play SDL2 SDL2_IM SDL2__IM ZZ JPEG WEB MIX MIX_
+default: play
+LIBS = -lz -lSDL2 -lSDL2_image -lSDL2_mixer
 
-LDFLAGS = -L$(PWD)/lib
-LDFLAGS_L = -L$(PWD)/lib_linux
-LIBS = -lz -lSDL2 -lSDL2_image -lSDL2_mixer 
-SDL2 : 
-	$(shell install_name_tool -change /usr/local/opt/sdl2/lib/libSDL2-2.0.0.dylib lib/libSDL2-2.0.0.dylib play)
-SDL2_IM :
-	 $(shell install_name_tool -change /usr/local/opt/sdl2_image/lib/libSDL2_image-2.0.0.dylib lib/libSDL2_image-2.0.0.dylib play)
-SDL2__IM :
-	$(shell install_name_tool -change /usr/local/opt/sdl2/lib/libSDL2-2.0.0.dylib lib/libSDL2-2.0.0.dylib lib/libSDL2_image-2.0.0.dylib)
-ZZ :
-	$(shell install_name_tool -change /usr/local/lib/libz.1.dylib lib/libz.1.dylib play)
-JPEG: 
-	$(shell install_name_tool -change /usr/local/opt/jpeg/lib/libjpeg.9.dylib lib/libjpeg.9.dylib lib/libSDL2_image-2.0.0.dylib)
-WEB: 
-	$(shell install_name_tool -change /usr/local/opt/webp/lib/libwebp.7.dylib lib/libwebp.7.dylib lib/libSDL2_image-2.0.0.dylib) 
-MIX : 
-	$(shell install_name_tool -change /usr/local/lib/libSDL2_mixer-2.0.0.dylib lib/libSDL2_mixer-2.0.0.dylib play)
-MIX_ :
-	$(shell install_name_tool -change /usr/local/lib/libSDL2-2.0.0.dylib lib/libSDL2-2.0.0.dylib lib/libSDL2_mixer-2.0.0.dylib)
 play: main.o Game.o TextureManager.o Player.o SDLGameObject.o InputHandler.o MainMenuState.o PlayState.o \
 	GameStateMachine.o MenuButton.o PauseState.o GameOverState.o AnimatedGraphic.o GameObjectFactory.o StateParser.o \
 	 Level.o TileLayer.o LevelParser.o base64.o ObjectLayer.o SoundManager.o \
 	 ScrollingBackground.o BetweenLevelState.o CollisionManager.o
-	$(CC) $(CFLAGS) -o play -I include include/tinyxml/tinyxml.cpp include/tinyxml/tinystr.cpp include/tinyxml/tinyxmlparser.cpp include/tinyxml/tinyxmlerror.cpp Game.o main.o TextureManager.o  Player.o SDLGameObject.o InputHandler.o MainMenuState.o PlayState.o GameStateMachine.o MenuButton.o PauseState.o GameOverState.o AnimatedGraphic.o GameObjectFactory.o StateParser.o Level.o TileLayer.o LevelParser.o base64.o ObjectLayer.o  SoundManager.o ScrollingBackground.o BetweenLevelState.o CollisionManager.o $(LDFLAGS) $(LIBS)
+	$(CC) $(CFLAGS) -o play -I include include/tinyxml/tinyxml.cpp include/tinyxml/tinystr.cpp include/tinyxml/tinyxmlparser.cpp include/tinyxml/tinyxmlerror.cpp Game.o main.o TextureManager.o  Player.o SDLGameObject.o InputHandler.o MainMenuState.o PlayState.o GameStateMachine.o MenuButton.o PauseState.o GameOverState.o AnimatedGraphic.o GameObjectFactory.o StateParser.o Level.o TileLayer.o LevelParser.o base64.o ObjectLayer.o  SoundManager.o ScrollingBackground.o BetweenLevelState.o CollisionManager.o $(LIBS)
 
-play_linux: main.o Game.o TextureManager.o Player.o SDLGameObject.o InputHandler.o MainMenuState.o PlayState.o GameStateMachine.o MenuButton.o PauseState.o GameOverState.o AnimatedGraphic.o GameObjectFactory.o StateParser.o Level.o TileLayer.o LevelParser.o base64.o ObjectLayer.o SoundManager.o ScrollingBackground.o BetweenLevelState.o CollisionManager.o
-	$(CC) $(CFLAGS) -o play -I include include/tinyxml/tinyxml.cpp include/tinyxml/tinystr.cpp include/tinyxml/tinyxmlparser.cpp include/tinyxml/tinyxmlerror.cpp Game.o main.o TextureManager.o  Player.o SDLGameObject.o InputHandler.o MainMenuState.o PlayState.o GameStateMachine.o MenuButton.o PauseState.o GameOverState.o AnimatedGraphic.o GameObjectFactory.o StateParser.o Level.o TileLayer.o LevelParser.o base64.o ObjectLayer.o SoundManager.o ScrollingBackground.o BetweenLevelState.o CollisionManager.o $(LDFLAGS_L) $(LIBS) -Wl,-rpath,$(PWD)/lib_linux
-	
-	
 main.o: main.cpp Game.h TextureManager.h GameObject.h 
 	$(CC) $(CFLAGS) -c main.cpp 
 TextureManager.o: TextureManager.cpp TextureManager.h
