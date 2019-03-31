@@ -13,6 +13,8 @@ class CollisionManager
 public:
     void checkPlayerTileCollision(Player* pPlayer, 
                         const std::vector<TileLayer*>& collisionLayers);
+    void checkPlayerEnemyCollision(Player* pPlayer, 
+                        const std::vector<GameObject*> &objects);
 };
 
 #endif 
