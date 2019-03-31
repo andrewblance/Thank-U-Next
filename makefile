@@ -1,4 +1,4 @@
-CC = g++ 
+CC = g++ -std=c++14 
 CFLAGS = -g -m64 
 
 default: play
