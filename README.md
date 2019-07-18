@@ -1,9 +1,11 @@
 # Thank U, Next (a side scrolling shooter game)
 
 ## Introduction
-This repo contains the begins of code to make a side scrolling shooter/ platformer game. At the current moment it will not compile on a machine unless you can supply libraries for SDL2, SDL2_mixer and SDL2_image. Also, the makefile included is pretty specific for my machine, so good luck.
+Code no longer works on newer machines. Can compile and play successfully on Mac OS Sierra using compilers from that era. May try to fix the problems that occured after updating to Mojave. The repo contains libraries I used when it did work (trying to use these on a newer OS wont work.) Annoyingly, I'm not sure whats changed to stop the code from working.
 
-Eventually, i will add the libraries and assets required to compile this properly.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This repo contains the begins of code to make a side scrolling shooter/ platformer game. 
 
 ## Improvements 
 The code requires a few major improvements, and a few more minor ones. These include:
